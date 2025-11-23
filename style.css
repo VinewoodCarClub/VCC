@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #e74c3c;
+    --secondary-color: #c0392b;
+    --dark-bg: #1a1a1a;
+    --darker-bg: #0d0d0d;
+    --light-text: #ffffff;
+    --gray-text: #b0b0b0;
+    --card-bg: #242424;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigace */
+.navbar {
+    background-color: var(--darker-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    color: var(--gray-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--light-text);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    height: 500px;
+    background: url('banner.jpg') center/cover no-repeat;
+    background-color: #2c3e50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+}
+
+.banner-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.banner-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.banner-subtitle {
+    font-size: 1.5rem;
+    color: var(--gray-text);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Hlavní obsah */
+.main-content {
+    padding: 60px 0;
+}
+
+.about-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    color: var(--gray-text);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Rychlé odkazy - karty */
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+}
+
+.card-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--light-text);
+}
+
+.card p {
+    color: var(--gray-text);
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Page header */
+.page-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 40px 0;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: var(--gray-text);
+}
+
+/* Content placeholder */
+.content-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.content-placeholder .card {
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--darker-bg);
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 60px;
+    border-top: 2px solid var(--primary-color);
+}
+
+.footer p {
+    color: var(--gray-text);
+}
+
+/* Responzivní design */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--darker-bg);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+        padding: 20px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 15px 0;
+    }
+
+    .banner-title {
+        font-size: 2rem;
+    }
+
+    .banner-subtitle {
+        font-size: 1rem;
+    }
+
+    .about-section h2 {
+        font-size: 2rem;
+    }
+
+    .quick-links {
+        grid-template-columns: 1fr;
+    }
+}
