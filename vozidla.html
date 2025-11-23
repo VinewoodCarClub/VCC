@@ -40,11 +40,39 @@
                 <p>Seznam vozidel povolených pro účast v závodech</p>
             </section>
 
-            <!-- Obsah vozidel se doplní později -->
-            <section class="content-placeholder">
-                <div class="card">
-                    <h2>🏎️ Seznam vozidel bude brzy k dispozici</h2>
-                    <p>Připravujeme kompletní seznam schválených závodních vozidel.</p>
+            <!-- Filtry a vyhledávání -->
+            <section class="filters-section">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="🔍 Vyhledat vozidlo...">
+                </div>
+                <div class="class-filters">
+                    <button class="class-btn active" data-class="all">Vše (<span id="count-all">0</span>)</button>
+                    <button class="class-btn class-s" data-class="S">Třída S (<span id="count-s">0</span>)</button>
+                    <button class="class-btn class-a" data-class="A">Třída A (<span id="count-a">0</span>)</button>
+                    <button class="class-btn class-b" data-class="B">Třída B (<span id="count-b">0</span>)</button>
+                    <button class="class-btn class-c" data-class="C">Třída C (<span id="count-c">0</span>)</button>
+                    <button class="class-btn class-d" data-class="D">Třída D (<span id="count-d">0</span>)</button>
+                </div>
+            </section>
+
+            <!-- Tabulka vozidel -->
+            <section class="vehicles-section">
+                <div class="results-info">
+                    Zobrazeno: <span id="displayedCount">0</span> vozidel
+                </div>
+                <div class="table-container">
+                    <table class="vehicles-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Název vozidla</th>
+                                <th>Třída</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vehiclesTableBody">
+                            <!-- Vozidla se načtou pomocí JS -->
+                        </tbody>
+                    </table>
                 </div>
             </section>
         </div>
@@ -57,6 +85,8 @@
         </div>
     </footer>
 
+    <script src="vehicles_data.js"></script>
+    <script src="vehicles.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
