@@ -467,6 +467,111 @@ body {
     text-align: center;
 }
 
+/* Track Detail Page */
+.back-link {
+    margin-bottom: 30px;
+}
+
+.back-link a {
+    color: var(--primary-gold);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.back-link a:hover {
+    color: var(--secondary-gold);
+}
+
+.track-detail-banner {
+    width: 100%;
+    margin-bottom: 50px;
+    overflow: hidden;
+    border-left: 4px solid var(--primary-gold);
+}
+
+.track-detail-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.track-detail-content h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: var(--light-text);
+    margin-bottom: 50px;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.track-detail-content h1 span {
+    color: var(--primary-gold);
+}
+
+.track-map,
+.track-champion {
+    text-align: center;
+}
+
+.track-map h4,
+.track-champion h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    color: var(--primary-gold);
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.track-map img,
+.track-champion img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border: 3px solid rgba(255, 215, 0, 0.3);
+    transition: border-color 0.3s ease;
+}
+
+.track-map img:hover,
+.track-champion img:hover {
+    border-color: var(--primary-gold);
+}
+
+.champion-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-gold);
+    margin-top: 15px;
+    letter-spacing: 2px;
+}
+
+.track-description {
+    padding: 40px;
+    background: var(--card-bg);
+    margin-top: 40px;
+    border-left: 4px solid var(--primary-gold);
+}
+
+.track-description h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--primary-gold);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.track-description p {
+    color: var(--gray-text);
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
 /* Footer */
 .footer {
     background-color: var(--darker-bg);
@@ -548,5 +653,23 @@ body {
 
     .vehicles-table td:first-child {
         width: 50px;
+    }
+
+    /* Responzivní track detail */
+    .track-detail-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .track-info-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .track-description {
+        padding: 25px 20px;
+    }
+
+    .back-link a {
+        font-size: 1rem;
     }
 }
