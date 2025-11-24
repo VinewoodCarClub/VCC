@@ -491,9 +491,10 @@ body {
 
 .track-detail-banner {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     overflow: hidden;
     border-left: 4px solid var(--primary-gold);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
 }
 
 .track-detail-banner img {
@@ -506,7 +507,7 @@ body {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 4rem;
     color: var(--light-text);
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     letter-spacing: 4px;
     text-align: center;
 }
@@ -515,61 +516,77 @@ body {
     color: var(--primary-gold);
 }
 
+.track-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+    align-items: start;
+}
+
 .track-map,
 .track-champion {
-    text-align: center;
+    background: var(--card-bg);
+    padding: 40px;
+    border-left: 4px solid var(--primary-gold);
 }
 
 .track-map h4,
 .track-champion h4 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--primary-gold);
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     letter-spacing: 2px;
+    text-align: center;
 }
 
 .track-map img,
 .track-champion img {
     width: 100%;
-    max-width: 500px;
     height: auto;
+    display: block;
     border: 3px solid rgba(255, 215, 0, 0.3);
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .track-map img:hover,
 .track-champion img:hover {
     border-color: var(--primary-gold);
+    transform: scale(1.02);
 }
 
 .champion-name {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--primary-gold);
-    margin-top: 15px;
-    letter-spacing: 2px;
+    margin-top: 25px;
+    letter-spacing: 3px;
+    text-align: center;
 }
 
 .track-description {
-    padding: 40px;
+    padding: 50px;
     background: var(--card-bg);
-    margin-top: 40px;
     border-left: 4px solid var(--primary-gold);
 }
 
 .track-description h4 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--primary-gold);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     letter-spacing: 2px;
+    text-align: center;
 }
 
 .track-description p {
     color: var(--gray-text);
-    line-height: 1.8;
-    font-size: 1.1rem;
+    line-height: 1.9;
+    font-size: 1.15rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 /* Footer */
@@ -658,15 +675,40 @@ body {
     /* Responzivní track detail */
     .track-detail-content h1 {
         font-size: 2.5rem;
+        margin-bottom: 40px;
     }
 
     .track-info-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
+    }
+
+    .track-map,
+    .track-champion {
+        padding: 25px;
+    }
+
+    .track-map h4,
+    .track-champion h4 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .champion-name {
+        font-size: 1.8rem;
+        margin-top: 15px;
     }
 
     .track-description {
-        padding: 25px 20px;
+        padding: 30px 20px;
+    }
+
+    .track-description h4 {
+        font-size: 1.8rem;
+    }
+
+    .track-description p {
+        font-size: 1rem;
     }
 
     .back-link a {
