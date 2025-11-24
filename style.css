@@ -107,63 +107,13 @@ body {
 /* Banner Hero Section */
 .banner {
     position: relative;
-    height: 600px;
-    background: url('banner.jpg') center/cover no-repeat;
-    background-color: #1a1a1a;
+    height: 500px;
+    background: url('banner.jpg') center/contain no-repeat;
+    background-color: #000000;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-}
-
-.banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%);
-}
-
-.banner-content {
-    position: relative;
-    text-align: center;
-    z-index: 1;
-    animation: fadeInUp 1s ease;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.banner-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 5rem;
-    font-weight: 400;
-    margin-bottom: 20px;
-    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
-    letter-spacing: 5px;
-}
-
-.banner-title .highlight {
-    color: var(--primary-gold);
-}
-
-.banner-subtitle {
-    font-size: 1.5rem;
-    color: var(--gray-text);
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
-    text-transform: uppercase;
-    letter-spacing: 3px;
 }
 
 /* Hlavní obsah */
@@ -560,16 +510,7 @@ body {
     }
 
     .banner {
-        height: 400px;
-        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-    }
-
-    .banner-title {
-        font-size: 3rem;
-    }
-
-    .banner-subtitle {
-        font-size: 1rem;
+        height: 300px;
     }
 
     .about-section h2 {
