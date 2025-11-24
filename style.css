@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,24 +7,24 @@
 }
 
 :root {
-    --primary-color: #e74c3c;
-    --secondary-color: #c0392b;
-    --dark-bg: #1a1a1a;
-    --darker-bg: #0d0d0d;
+    --primary-gold: #FFD700;
+    --secondary-gold: #FDB931;
+    --dark-bg: #000000;
+    --darker-bg: #0a0a0a;
+    --card-bg: #1a1a1a;
     --light-text: #ffffff;
     --gray-text: #b0b0b0;
-    --card-bg: #242424;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: var(--dark-bg);
     color: var(--light-text);
     line-height: 1.6;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -30,33 +32,45 @@ body {
 /* Navigace */
 .navbar {
     background-color: var(--darker-bg);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 20px rgba(255, 215, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 80px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-logo img {
+    height: 50px;
 }
 
 .nav-logo h1 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    color: var(--light-text);
+    font-weight: 400;
+    letter-spacing: 3px;
+    line-height: 1.2;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 40px;
 }
 
 .nav-link {
@@ -66,11 +80,13 @@ body {
     font-size: 1rem;
     transition: color 0.3s ease;
     padding: 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-color);
+    color: var(--primary-gold);
 }
 
 /* Hamburger menu */
@@ -81,255 +97,324 @@ body {
 }
 
 .bar {
-    width: 25px;
+    width: 28px;
     height: 3px;
-    background-color: var(--light-text);
-    margin: 3px 0;
+    background-color: var(--primary-gold);
+    margin: 4px 0;
     transition: 0.3s;
 }
 
-/* Banner */
+/* Banner Hero Section */
 .banner {
     position: relative;
-    height: 500px;
+    height: 600px;
     background: url('banner.jpg') center/cover no-repeat;
-    background-color: #2c3e50;
+    background-color: #1a1a1a;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
-.banner-overlay {
+.banner::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%);
 }
 
 .banner-content {
     position: relative;
     text-align: center;
     z-index: 1;
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .banner-title {
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    font-weight: 400;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.9);
+    letter-spacing: 5px;
+}
+
+.banner-title .highlight {
+    color: var(--primary-gold);
 }
 
 .banner-subtitle {
     font-size: 1.5rem;
     color: var(--gray-text);
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
 /* Hlavní obsah */
 .main-content {
-    padding: 60px 0;
+    padding: 80px 0;
 }
 
 .about-section {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 .about-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    color: var(--primary-gold);
+    letter-spacing: 3px;
 }
 
 .about-section p {
     font-size: 1.2rem;
     color: var(--gray-text);
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
+    line-height: 1.8;
 }
 
-/* Rychlé odkazy - karty */
+/* Diagonal Cards Section */
 .quick-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
 }
 
 .card {
-    background-color: var(--card-bg);
-    padding: 40px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--darker-bg) 100%);
+    padding: 50px 40px;
+    border-radius: 0;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-left: 4px solid var(--primary-gold);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, transparent 50%, rgba(255, 215, 0, 0.05) 50%);
+    transition: 0.4s;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+    transform: translateX(10px);
+    box-shadow: -10px 10px 40px rgba(255, 215, 0, 0.2);
+}
+
+.card:hover::before {
+    width: 250px;
+    height: 250px;
 }
 
 .card-icon {
     font-size: 4rem;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
     color: var(--light-text);
+    letter-spacing: 2px;
 }
 
 .card p {
     color: var(--gray-text);
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--primary-color);
-    color: var(--light-text);
+    padding: 15px 40px;
+    background-color: var(--primary-gold);
+    color: var(--dark-bg);
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-gold);
 }
 
 .btn:hover {
-    background-color: var(--secondary-color);
+    background-color: transparent;
+    color: var(--primary-gold);
 }
 
-/* Page header */
+/* Page Header */
 .page-header {
     text-align: center;
     margin-bottom: 60px;
-    padding: 40px 0;
+    padding: 60px 0 40px;
+    position: relative;
+}
+
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--primary-gold);
 }
 
 .page-header h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    color: var(--primary-color);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--light-text);
+    letter-spacing: 4px;
+}
+
+.page-header h1 span {
+    color: var(--primary-gold);
 }
 
 .page-header p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--gray-text);
-}
-
-/* Content placeholder */
-.content-placeholder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 300px;
-}
-
-.content-placeholder .card {
-    max-width: 600px;
-    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Filtry a vyhledávání */
 .filters-section {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .search-box {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .search-box input {
     width: 100%;
-    padding: 15px 20px;
-    font-size: 1rem;
+    padding: 18px 25px;
+    font-size: 1.1rem;
     background-color: var(--card-bg);
     border: 2px solid var(--card-bg);
-    border-radius: 8px;
     color: var(--light-text);
     transition: border-color 0.3s ease;
+    font-family: 'Roboto', sans-serif;
 }
 
 .search-box input:focus {
     outline: none;
-    border-color: var(--primary-color);
+    border-color: var(--primary-gold);
 }
 
 .search-box input::placeholder {
     color: var(--gray-text);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .class-filters {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
 .class-btn {
-    padding: 10px 20px;
+    padding: 12px 25px;
     background-color: var(--card-bg);
     color: var(--light-text);
     border: 2px solid var(--card-bg);
-    border-radius: 8px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
 }
 
 .class-btn:hover {
-    border-color: var(--primary-color);
+    border-color: var(--primary-gold);
 }
 
 .class-btn.active {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    background-color: var(--primary-gold);
+    border-color: var(--primary-gold);
+    color: var(--dark-bg);
 }
 
 .class-btn.class-s.active {
     background-color: #FFD700;
     border-color: #FFD700;
-    color: #1a1a1a;
+    color: #000;
 }
 
 .class-btn.class-a.active {
     background-color: #e74c3c;
     border-color: #e74c3c;
+    color: #fff;
 }
 
 .class-btn.class-b.active {
     background-color: #3498db;
     border-color: #3498db;
+    color: #fff;
 }
 
 .class-btn.class-c.active {
     background-color: #2ecc71;
     border-color: #2ecc71;
+    color: #fff;
 }
 
 .class-btn.class-d.active {
     background-color: #95a5a6;
     border-color: #95a5a6;
+    color: #fff;
 }
 
 /* Tabulka vozidel */
 .vehicles-section {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .results-info {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: var(--gray-text);
-    font-size: 0.95rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .table-container {
     background-color: var(--card-bg);
-    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    border-left: 4px solid var(--primary-gold);
 }
 
 .vehicles-table {
@@ -342,13 +427,14 @@ body {
 }
 
 .vehicles-table th {
-    padding: 15px;
+    padding: 20px;
     text-align: left;
-    font-weight: 600;
-    color: var(--primary-color);
+    font-weight: 700;
+    color: var(--primary-gold);
     text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .vehicles-table tbody tr {
@@ -357,74 +443,93 @@ body {
 }
 
 .vehicles-table tbody tr:hover {
-    background-color: rgba(231, 76, 60, 0.1);
+    background-color: rgba(255, 215, 0, 0.05);
 }
 
 .vehicles-table td {
-    padding: 15px;
+    padding: 18px 20px;
     color: var(--light-text);
 }
 
 .vehicles-table td:first-child {
     color: var(--gray-text);
-    font-weight: 600;
-    width: 60px;
+    font-weight: 700;
+    width: 70px;
 }
 
 .no-results {
     text-align: center;
-    padding: 40px !important;
+    padding: 50px !important;
     color: var(--gray-text);
     font-style: italic;
+    font-size: 1.2rem;
 }
 
 /* Odznaky tříd */
 .class-badge {
     display: inline-block;
-    padding: 5px 15px;
-    border-radius: 20px;
+    padding: 6px 18px;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     text-align: center;
-    min-width: 50px;
+    min-width: 55px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .class-badge.class-s {
     background-color: #FFD700;
-    color: #1a1a1a;
+    color: #000;
 }
 
 .class-badge.class-a {
     background-color: #e74c3c;
-    color: #ffffff;
+    color: #fff;
 }
 
 .class-badge.class-b {
     background-color: #3498db;
-    color: #ffffff;
+    color: #fff;
 }
 
 .class-badge.class-c {
     background-color: #2ecc71;
-    color: #ffffff;
+    color: #fff;
 }
 
 .class-badge.class-d {
     background-color: #95a5a6;
-    color: #ffffff;
+    color: #fff;
+}
+
+/* Content placeholder */
+.content-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.content-placeholder .card {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
 }
 
 /* Footer */
 .footer {
     background-color: var(--darker-bg);
-    padding: 30px 0;
+    padding: 40px 0;
     text-align: center;
-    margin-top: 60px;
-    border-top: 2px solid var(--primary-color);
+    margin-top: 100px;
+    border-top: 3px solid var(--primary-gold);
 }
 
 .footer p {
     color: var(--gray-text);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Responzivní design */
@@ -436,14 +541,14 @@ body {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 80px;
         flex-direction: column;
         background-color: var(--darker-bg);
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
-        padding: 20px 0;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.8);
+        padding: 30px 0;
     }
 
     .nav-menu.active {
@@ -451,11 +556,16 @@ body {
     }
 
     .nav-item {
-        margin: 15px 0;
+        margin: 20px 0;
+    }
+
+    .banner {
+        height: 400px;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
     }
 
     .banner-title {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .banner-subtitle {
@@ -463,14 +573,17 @@ body {
     }
 
     .about-section h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
     }
 
     .quick-links {
         grid-template-columns: 1fr;
     }
 
-    /* Responzivní filtry */
     .class-filters {
         flex-direction: column;
     }
@@ -479,7 +592,6 @@ body {
         width: 100%;
     }
 
-    /* Responzivní tabulka */
     .table-container {
         overflow-x: auto;
     }
@@ -490,10 +602,10 @@ body {
 
     .vehicles-table th,
     .vehicles-table td {
-        padding: 10px 8px;
+        padding: 12px 10px;
     }
 
     .vehicles-table td:first-child {
-        width: 40px;
+        width: 50px;
     }
 }
