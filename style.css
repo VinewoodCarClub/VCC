@@ -583,10 +583,19 @@ body {
 .track-description p {
     color: var(--gray-text);
     line-height: 1.9;
-    font-size: 1.15rem;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
+    font-size: 1.05rem;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto 15px auto;
+}
+
+.track-description p:last-child {
+    margin-bottom: 0;
+}
+
+.track-description strong {
+    color: var(--light-text);
+    font-weight: 600;
 }
 
 /* Footer */
@@ -708,7 +717,9 @@ body {
     }
 
     .track-description p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 12px;
     }
 
     .back-link a {
